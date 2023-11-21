@@ -17,55 +17,28 @@
 nav {
     width: 100%;
     @include flex;
-    background-color: $c-w;
 
-    .cont {
-        @include cont;
+    .navbar {
+        width: 100%;
+        @include flex;
         justify-content: space-between;
-        padding: 30px 0;
+        padding: 50px 0;
 
-        .nav-img {
-            max-width: 150px;
-            width: 100%;
-            height: 80px;
-            position: relative;
-            @include flex;
-
-            .logo {
-                max-width: 50px;
-                width: 100%;
-                height: 50px;
-                border-radius: 50%;
-                background-color: $c-c;
-                position: absolute;
-                z-index: 1;
-            }
-
-            .logo1 {
-                max-width: 100%;
-                width: 100%;
-                height: 100%;
-                position: absolute;
-                z-index: 2;
-                @include flex;
-                font-size: 30px;
-                font-family: $f1;
-            }
+        i {
+            display: none;
         }
 
-        .nav-ul {
-            max-width: 600px;
-            width: 100%;
-            height: 80px;
+        .ul-1 {
+
             @include flex;
 
             ul {
-                list-style: none;
                 @include flex;
-                gap: 30px;
+                list-style: none;
+                gap: 50px;
 
                 li {
-                    font-family: $f2;
+                    transition: all .5s ease;
 
                     &:hover {
                         color: $c-c;
@@ -75,30 +48,41 @@ nav {
             }
         }
 
-        .us {
-
+        .nav-btn {
             @include btn;
-            width: 170px;
-        }
-
-        i {
-            display: none;
+            width: 15%;
         }
     }
 }
 
 .creative {
     width: 100%;
-    @include flex;
     background-color: beige;
 
+    .sun {
+        position: relative;
+
+        .sun-1 {
+            position: absolute;
+            left: -90px;
+            top: 80px;
+
+            img {
+                width: 60%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+    }
+
     .design {
-        @include cont;
-        //position: relative;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         .web-1 {
-            max-width: 55%;
-            width: 100%;
+            width: 55%;
             @include flex-c;
             gap: 20px;
 
@@ -144,43 +128,31 @@ nav {
 
         }
 
-        .web2 {
-            max-width: 45%;
-            width: 100%;
-            // min-height: 600px;
+        .photo {
+            width: 45%;
             position: relative;
 
-            .web-3 {
-                width: 100%;
-                // height: 600px;
+            .img-2 {
+                width: 75%;
+                object-fit: cover;
                 position: absolute;
-                z-index: 2;
-
-
-                img {
-                    width: 86%;
-
-                    object-fit: cover;
-                }
+                top: 50px;
+                left: 20px;
+                //z-index: 2;
             }
 
-            .web-4 {
-                width: 100%;
+            .img-1 {
+                width: 95%;
+                // height: 100%;
+                position: relative;
+                object-fit: cover;
 
-                // position: absolute;
-                // z-index: 1;
-                // top: 50px;
-
-                img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                }
+                z-index: 1;
             }
-
         }
     }
 }
+
 
 .project {
     width: 100%;
@@ -192,8 +164,7 @@ nav {
         padding: 100px 0;
 
         .year-a {
-            max-width: 45%;
-            width: 100%;
+            width: 45%;
 
             img {
                 width: 100%;
@@ -202,8 +173,7 @@ nav {
         }
 
         .year-b {
-            max-width: 49%;
-            width: 100%;
+            width: 49%;
             @include flex-c;
             gap: 30px;
 
@@ -310,18 +280,18 @@ nav {
 
 .services {
     width: 100%;
-    @include flex;
 
     .offer {
-        @include cont;
-        //flex-wrap: wrap;
-        flex-direction: column;
+        width: 100%;
+        @include flex-d;
         gap: 50px;
+        padding: 100px 0;
 
         .up {
-            max-width: 70%;
-            width: 100%;
+            width: 70%;
+
             @include flex-d;
+            gap: 30px;
 
             .ser {
                 width: 100%;
@@ -352,49 +322,39 @@ nav {
             }
         }
 
-        .wrapp {
-            max-width: 1400px;
+        .offer-1 {
             width: 100%;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 17.5px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 24px;
 
-            .mobile {
-                max-width: 24%;
-                width: 100%;
+            .div8 {
+                @include flex-d;
+                text-align: center;
+                padding: 50px 30px;
+                gap: 20px;
                 border: 1px solid $c-c;
                 border-radius: 7px;
-                @include flex-d;
 
-                .mob-1 {
-                    width: 100%;
-                    @include flex;
-                    padding: 40px 0;
-
+                h3 {
+                    font-size: $h3;
+                    font-family: $f2;
                 }
 
-                .mob-2 {
-                    width: 100%;
-                    @include flex-d;
-                    text-align: center;
-                    padding: 0 40px 40px 40px;
-                    gap: 20px;
+                p {
+                    font-family: $fp;
+                    font-size: 15px;
+                }
 
-                    h3 {
-                        font-size: 25px;
-                        font-family: $f2;
-                    }
-
-                    p {
-                        font-family: $fp;
-
-                    }
+                &:hover {
+                    background-color: rgb(249, 241, 231);
 
                 }
             }
         }
     }
 }
+
 
 .resume {
     width: 100%;
@@ -504,21 +464,159 @@ nav {
                     display: flex;
                     border-radius: 10px;
 
-                    .b3 {
+                    .b10 {
                         width: 33%;
                         padding: 30px 30px 50px 30px;
                         @include flex-c;
                         gap: 20px;
+
+
+                        h3 {
+                            font-size: 21px;
+                        }
+
+                        p {
+                            font-family: $fp;
+                            color: gray;
+                            font-size: 14px;
+                        }
+
+                        h4 {
+                            font-size: $h4;
+                            font-family: $f2;
+                        }
+                    }
+
+                    .b11 {
+                        width: 33%;
+                        padding: 30px 30px 50px 30px;
+                        @include flex-c;
+                        gap: 20px;
+
+
+                        .b4 {
+
+                            @include flex;
+                            gap: 10px;
+
+                            .b6 {
+                                width: 100%;
+                                height: 2px;
+                                background-color: $c-b;
+
+                            }
+
+                        }
+
+                        .b4 {
+
+                            @include flex;
+                            gap: 10px;
+
+                            .b7 {
+                                width: 60%;
+                                height: 2px;
+                                background-color: rgb(217, 215, 215);
+                            }
+                        }
 
                         h4 {
                             font-size: $h4;
                             font-family: $f2;
                         }
 
-                        p {
-
-                            color: $c-g;
+                        h3 {
+                            font-size: 21px;
                         }
+
+                        p {
+                            font-family: $fp;
+                            color: gray;
+                            font-size: 14px;
+                        }
+
+
+                    }
+
+                    .b12 {
+                        width: 33%;
+                        padding: 30px 30px 50px 30px;
+                        @include flex-c;
+                        gap: 20px;
+
+
+                        h3 {
+                            font-size: 21px;
+                        }
+
+                        p {
+                            font-family: $fp;
+                            color: gray;
+                            font-size: 14px;
+                        }
+
+                        h4 {
+                            font-size: $h4;
+                            font-family: $f2;
+                        }
+                    }
+
+                    .b3 {
+                        width: 33%;
+                        padding: 30px 30px 50px 30px;
+                        @include flex-c;
+                        gap: 20px;
+                        border-right: 1px solid rgb(217, 215, 215);
+
+
+                        h3 {
+                            font-size: 21px;
+                        }
+
+                        p {
+                            font-family: $fp;
+                            color: gray;
+                            font-size: 14px;
+                        }
+
+                        .b4 {
+
+                            @include flex;
+                            gap: 10px;
+
+                            .b6 {
+                                width: 100%;
+                                height: 2px;
+                                background-color: $c-b;
+
+                            }
+
+                        }
+
+                        .b4 {
+
+                            @include flex;
+                            gap: 10px;
+
+                            .b7 {
+                                width: 60%;
+                                height: 2px;
+                                background-color: rgb(217, 215, 215);
+                            }
+
+                            .b6 {
+                                width: 100%;
+                                height: 2px;
+                                background-color: rgb(217, 215, 215);
+                            }
+                        }
+
+                        h4 {
+                            font-size: $h4;
+                            font-family: $f2;
+                        }
+
+
                     }
                 }
 
@@ -553,6 +651,7 @@ nav {
                     width: 20px;
                     height: 20px;
 
+
                     img {
                         width: 100%;
                         height: 100%;
@@ -581,9 +680,15 @@ nav {
             .back3 {
                 width: 32%;
                 background-color: $c-be;
-                padding: 30px;
+                padding: 40px 30px;
+                border-radius: 7px;
                 @include flex-c;
                 gap: 20px;
+
+                &:hover {
+                    background-color: rgb(230, 224, 217);
+                    transition: all .5s ease;
+                }
 
                 .client {
                     width: 100%;
@@ -634,9 +739,15 @@ nav {
             .back4 {
                 width: 32%;
                 background-color: $c-be;
-                padding: 30px;
+                padding: 40px 30px;
+                border-radius: 7px;
                 @include flex-c;
                 gap: 20px;
+
+                &:hover {
+                    background-color: rgb(230, 224, 217);
+                    transition: all .5s ease;
+                }
 
                 .client {
                     width: 100%;
@@ -654,6 +765,7 @@ nav {
                             height: 100%;
                             border-radius: 50%;
                             object-fit: cover;
+
                         }
                     }
 
@@ -687,9 +799,15 @@ nav {
             .back5 {
                 width: 32%;
                 background-color: $c-be;
-                padding: 30px;
+                padding: 40px 30px;
+                border-radius: 7px;
                 @include flex-c;
                 gap: 20px;
+
+                &:hover {
+                    background-color: rgb(230, 224, 217);
+                    transition: all .5s ease;
+                }
 
                 .client {
                     width: 100%;
@@ -746,14 +864,12 @@ nav {
     @include flex;
 
     .port {
-        @include cont;
-        flex-direction: column;
-        gap: 30px;
-        padding: 100px 0;
+        width: 100%;
+        @include flex-d;
+        gap: 50px;
 
         .port-a {
-            max-width: 70%;
-            width: 100%;
+            width: 70%;
             @include flex-d;
             gap: 20px;
 
@@ -788,52 +904,77 @@ nav {
         }
 
         .port-b {
-            max-width: 70%;
-            width: 100%;
-            display: flex;
+            width: 60%;
+            @include flex;
             justify-content: space-between;
 
             p {
-                font-size: 17px;
-                cursor: pointer;
+                color: $c-g;
+                font-family: $fp;
+                font-size: 15px;
+
+                &:hover {
+                    color: $c-b;
+                }
+            }
+
+            #pp {
+                color: $c-c;
+
+                &:hover {
+                    color: $c-b;
+                }
             }
         }
 
         .port-c {
             width: 100%;
 
-            display: flex;
-            flex-wrap: wrap;
-            gap: 26.5px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 24px;
 
-            .port6 {
-                width: 32%;
-                height: 320px;
-                border-radius: 7px;
+            .port8 {
 
-                img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    border-radius: 7px;
-                }
-            }
-
-            .port7 {
-                width: 66%;
-                height: 320px;
-                border-radius: 7px;
+                // width: 70%;
+                border-radius: 5px;
 
                 img {
                     width: 100%;
-                    height: 100%;
                     object-fit: cover;
-                    border-radius: 7px;
+                    height: 340px;
+                    transition: all .5s ease;
+                    border-radius: 5px;
+
+                    &:hover {
+                        filter: brightness(50%);
+                    }
+
                 }
             }
+
+            .port9 {
+                grid-column: 2/4;
+                border-radius: 5px;
+
+                img {
+                    width: 100%;
+                    object-fit: cover;
+                    height: 340px;
+                    border-radius: 5px;
+                    transition: all .5s ease;
+
+                    &:hover {
+                        filter: brightness(50%);
+                    }
+
+                }
+            }
+
         }
 
     }
+
 }
 
 .partner {
@@ -847,8 +988,8 @@ nav {
         gap: 50px;
 
         .brain-a {
-            max-width: 70%;
-            width: 100%;
+
+            width: 70%;
             @include flex-d;
             gap: 20px;
 
@@ -894,6 +1035,13 @@ nav {
                 @include flex;
                 padding: 20px;
 
+                img {
+                    transition: all .8s ease;
+                    &:hover{
+                        transform: scale(1.1);
+                    }
+                }
+
             }
 
             .brain7 {
@@ -902,6 +1050,13 @@ nav {
                 border-radius: 7px;
                 @include flex;
                 padding: 20px;
+                
+                    img {
+                        transition: all .8s ease;
+                        &:hover{
+                            transform: scale(1.1);
+                        }
+                    }
 
             }
 
@@ -911,6 +1066,12 @@ nav {
                 border-radius: 7px;
                 @include flex;
                 padding: 20px;
+                img {
+                    transition: all .8s ease;
+                    &:hover{
+                        transform: scale(1.1);
+                    }
+                }
 
             }
         }
@@ -924,15 +1085,13 @@ nav {
 
     .latest {
         @include cont;
-        background-color: yellow;
         flex-direction: column;
         padding: 100px 0;
         gap: 50px;
 
 
         .blog-a {
-            max-width: 70%;
-            width: 100%;
+            width: 70%;
             @include flex-d;
             gap: 20px;
 
@@ -950,12 +1109,14 @@ nav {
                         width: 100%;
                         height: 100%;
                         object-fit: cover;
+
                     }
                 }
 
                 .blog3 {
                     width: 100px;
                     font-family: $f2;
+
                 }
 
             }
@@ -973,26 +1134,36 @@ nav {
 
             .cereal3 {
                 width: 32%;
-                height: 500px;
+                // height: 500px;
                 border: 1px solid $c-c;
                 border-radius: 7px;
+
 
                 .cereal1 {
                     width: 100%;
                     height: 300px;
                     border-radius: 7px;
+                    overflow: hidden;
+                    position: relative;
+
 
                     img {
                         width: 100%;
                         height: 100%;
                         object-fit: cover;
                         border-radius: 7px;
+                        transition: all .5s ease;
+
+                        &:hover {
+                            filter: brightness(50%);
+                        }
+
                     }
                 }
 
                 .cereal2 {
                     width: 100%;
-                  //  height: 200px;
+                    //  height: 200px;
                     padding: 30px;
                     @include flex-c;
                     gap: 30px;
@@ -1031,15 +1202,13 @@ nav {
 
     .from {
         @include cont;
-        background-color: yellow;
         flex-direction: column;
         gap: 30px;
         padding: 100px 0;
 
 
         .from-a {
-            max-width: 70%;
-            width: 100%;
+            width: 70%;
             @include flex-d;
             gap: 20px;
 
@@ -1100,7 +1269,7 @@ nav {
                     box-sizing: border-box;
                     border: 1px solid $c-c;
                     border-radius: 4px;
-                    background-color: #f8f8f8;
+
                     font-size: 16px;
                     resize: none;
                 }
@@ -1162,154 +1331,187 @@ nav {
     }
 }
 
-footer {
+.footer-1 {
     width: 100%;
     @include flex;
     background-color: $c-b;
 
-    .footer-top {
-        @include cont;
-        color: $c-w;
-        justify-content: space-between;
+    .footer-a {
+        width: 100%;
         padding: 100px 0;
 
-        .fr {
-            width: 30%;
-            @include flex-c;
-            gap: 50px;
-            // padding: 30px;
+        .foo1 {
+            width: 100%;
+            display: flex;
+            gap: 20px;
 
-            .f-img {
-                max-width: 150px;
-                width: 100%;
-                height: 80px;
-                position: relative;
-                @include flex;
+            .ftr1 {
+                width: 30%;
+                @include flex-c;
+                gap: 40px;
 
-                .foo {
-                    max-width: 50px;
-                    width: 100%;
-                    height: 50px;
-                    border-radius: 50%;
-                    background-color: $c-c;
-                    position: absolute;
-                    z-index: 1;
+                img {
+                    width: 40%;
                 }
 
-                .foo1 {
-                    max-width: 100%;
-                    width: 100%;
-                    height: 100%;
-                    position: absolute;
-                    z-index: 2;
-                    @include flex;
-                    font-size: 30px;
-                    font-family: $f1;
+                p {
+                    color: $c-w;
+                    font-family: $fp;
+                    font-size: 15px;
+
                 }
+
+                h3 {
+                    font-family: $f3;
+                    color: $c-w;
+                    font-size: $h4;
+                }
+
             }
 
-            p {
-                font-family: $fp;
-            }
+            .ftr2 {
+                width: 15%;
+                color: $c-w;
+                @include flex-c;
+                gap: 40px;
 
-            h5 {
-                font-size: $h5;
-                font-family: $f3;
-            }
-        }
+                h4 {
+                    font-family: $f3;
+                    font-size: $h4 ;
+                }
 
-        .fr2 {
-            width: 20%;
-            @include flex-c;
-            gap: 30px;
+                ul {
+                    list-style: none;
+                    @include flex-c;
+                    gap: 18px;
 
-            h5 {
-                margin: 20px 0 20px 0;
-                font-size: $h5;
-            }
-        }
+                    li {
+                        transition: all .5s ease;
 
-        .fr1 {
-            width: 20%;
-            @include flex-c;
-            gap: 40px;
-
-            h5 {
-                font-size: $h5;
-                // margin: 30px 0 20px 0;
-            }
-
-            .me {
-                width: 100%;
-                display: flex;
-                justify-content: space-between;
-
-                .me4 {
-                    width: 18%;
-                    background-color: $c-c;
-                    border-radius: 7px;
-                    @include flex;
-
-                    i {
-                        font-size: 22px;
-                        padding: 8px 0;
+                        &:hover {
+                            color: $c-c;
+                            cursor: pointer;
+                        }
                     }
                 }
             }
 
-            .me1 {
-                width: 100%;
-                display: flex;
-                gap: 10px;
-
-                i {
-                    font-size: 18px;
-                    color: $c-c;
+            .ftr3 {
+                width: 25%;
+                color: $c-w;
+                @include flex-c;
+                gap: 40px;
+                h4 {
+                    font-family: $f3;
+                    font-size: $h4 ;
                 }
 
+                .ftrall {
+                    @include flex-c;
+                    gap: 20px;
+
+                    .icon {
+                        display: flex;
+                        gap: 30px;
+
+                        .me4 {
+                            background-color: $c-c;
+                            width: 40px;
+                            height: 40px;
+                            @include flex;
+                            border-radius: 5px;
+                            transition: all .5s ease;
+
+                            &:hover {
+                                background-color: $c-w;
+                                cursor: pointer;
+                            }
+
+                            i {
+                                font-size: 20px;
+
+                                &:hover {
+                                    color: $c-c;
+                                    cursor: pointer;
+                                }
+
+                            }
+                        }
+                    }
+
+                    .icon1 {
+                        display: flex;
+                        gap: 10px;
+
+                        i {
+                            font-size: 20px;
+                            color: $c-c;
+                        }
+
+                        p {
+                            font-size: 15px;
+                            font-family: $fp;
+                        }
+                    }
+
+                }
             }
         }
-
-        hr {
-            color: $c-w;
-            height: 10px;
-        }
-    }
-
-    .footer-bottom {
-        @include cont;
-        color: $c-w;
-        justify-content: space-between;
-        padding: 50px 0;
-
-        .bot1 {
-            width: 30%;
-            font-size: 17px;
-            display: flex;
-            align-items: center;
-
-        }
-
-        .bot2 {
-            width: 25%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            .bot3 {
-                width: 70%;
-                cursor: pointer;
-            }
-
-            .bot4 {
-                width: 30%;
-                font-family: $fp;
-                cursor: pointer;
-            }
-        }
-
     }
 }
+
+.footer-2 {
+    width: 100%;
+    background-color: $c-b;
+    @include flex;
+
+    .footer-b {
+        width: 100%;
+        @include flex;
+        padding: 50px 0;
+
+        .footerend {
+            width: 100%;
+            @include flex;
+
+            .end1 {
+                width: 50%;
+                color: $c-w;
+                font-size: 17px;
+            }
+
+            .end2 {
+                width: 50%;
+                display: flex;
+                justify-content: flex-end;
+
+                .end3 {
+                    width: 70%;
+                    @include flex;
+                    justify-content: flex-end;
+
+                    ul {
+                        list-style: none;
+                        @include flex;
+                        gap: 90px;
+
+                        li {
+                            font-size: 17px;
+                            color: $c-w;
+                            transition: all .5s ease;
+
+                            &:hover {
+                                color: $c-c;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 
 
 @media screen and (max-width:990px) {
@@ -1317,74 +1519,73 @@ footer {
         width: 100%;
 
         .container {
-            max-width: 1400px;
-            width: 100%;
-            padding: 0 10px;
+            padding: 0 40px;
+            @include flex;
 
-            .cont {
-                max-width: 1400px;
+            .navbar {
                 width: 100%;
+                padding: 25px 0;
 
-                .nav-img {
-                    max-width: 150px;
-                    width: 100%;
 
-                    .logo {
-                        max-width: 50px;
-                        width: 100%;
-                    }
-
-                    .logo1 {
-                        width: 100%;
+                .img-1 {
+                    img {
+                        width: 70%;
                     }
                 }
 
-                .nav-ul {
-                    max-width: 600px;
-                    width: 100%;
-
+                .ul-1 {
+                    ul {
+                        gap: 30px;
+                    }
                 }
 
-                .us {
-                    @include btn2;
-
+                .nav-btn {
+                    background: none;
+                    font-size: 17px;
+                    color: $c-b;
                 }
             }
         }
     }
 
+
     .creative {
         width: 100%;
 
         .container {
-            max-width: 1400px;
-            width: 100%;
-            padding: 10px 0;
+            padding: 0 10px;
+
+            .sun {
+                width: 100%;
+                left: 85px;
+            }
 
             .design {
-                max-width: 1400px;
                 width: 100%;
                 flex-direction: column-reverse;
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 gap: 30px;
-                padding: 0;
 
-                .web-1 {
-                    // max-width: 45%;
-                    width: 100%;
 
+                .photo {
+                    width: 80%;
                 }
 
-                .web2 {
-                    //   max-width: 50%;
+                .web-1 {
                     width: 100%;
-                    // .web-3{
-                    //     width: 100%;
 
-                    // }
-                    // .web-4{
-                    //     width: 100%;
+                    h1 {
+                        font-size: 50px;
 
-                    // }
+                    }
+
+                    p {
+                        font-size: 17px;
+                    }
+
+
                 }
             }
         }
@@ -1395,9 +1596,6 @@ footer {
         width: 100%;
 
         .container {
-            max-width: 1400px;
-            width: 100%;
-            padding: 10px 0;
 
             .year {
                 max-width: 1400px;
@@ -1407,13 +1605,18 @@ footer {
                 gap: 30px;
 
                 .year-a {
-                    max-width: 60%;
-                    width: 100%;
+                    width: 60%;
+
                 }
 
                 .year-b {
-                    max-width: 85%;
-                    width: 100%;
+                    width: 80%;
+
+                    .nam2 {
+                        h2 {
+                            font-size: 40px;
+                        }
+                    }
                 }
             }
         }
@@ -1424,24 +1627,24 @@ footer {
 
         .container {
             .offer {
-                max-width: 1400px;
                 width: 100%;
-                padding: 100px 0;
 
                 .up {
-                    max-width: 70%;
                     width: 100%;
+                    gap: 20px;
+
+                    h2 {
+                        font-size: 40px;
+                    }
                 }
 
-                .wrapp {
-                    max-width: 1400px;
-                    width: 100%;
-                    align-items: center;
-                    justify-content: center;
+                .offer-1 {
+                    width: 80%;
+                    grid-gap: 24px;
+                    grid-template-columns: repeat(2, 1fr);
 
-                    .mobile {
-                        max-width: 40%;
-                        width: 100%;
+                    .div8 {
+                        padding: 50px 30px;
                     }
                 }
             }
@@ -1473,14 +1676,17 @@ footer {
                 max-width: 1400px;
                 width: 100%;
                 gap: 0;
+                @include flex-d;
+
 
                 .edu-a {
                     display: none;
                 }
 
                 .edu-b {
-                    max-width: 100%;
-                    padding: 0 100px;
+
+                    max-width: 80%;
+                    // padding: 0 100px;
 
                     .b1 {
                         flex-direction: column;
@@ -1489,17 +1695,50 @@ footer {
                         .b3 {
                             width: 100%;
                             padding: 30px 20px 10px 20px;
+                            border-right: none;
 
                             h4 {
                                 font-size: 22px;
                             }
 
+                            .b4 {
+                                width: 100%;
+
+                                .b7 {
+                                    width: 100%;
+                                }
+                            }
+                        }
+
+                        .b10 {
+                            width: 100%;
+                            padding: 30px 20px 10px 20px;
+                        }
+
+                        .b11 {
+                            width: 100%;
+                            padding: 30px 20px 10px 20px;
+
+                            .b4 {
+                                width: 100%;
+
+                                .b7 {
+                                    width: 100%;
+                                }
+                            }
+                        }
+
+                        .b12 {
+
+                            width: 100%;
+                            padding: 30px 20px 10px 20px;
+
                         }
                     }
                 }
             }
-        }
 
+        }
     }
 
     .test {
@@ -1524,11 +1763,12 @@ footer {
                 }
 
                 .back-c {
-                    width: 100%;
-                    padding: 0 100px;
+                    width: 80%;
+                    //padding: 0 100px;
 
                     .back3 {
                         width: 48%;
+
                     }
 
                     .back5 {
@@ -1548,37 +1788,35 @@ footer {
     .visit {
         width: 100%;
 
-        .port {
-            max-width: 1400px;
-            width: 100%;
-            padding: 50px 0;
-
-            .port-a {
-                h2 {
-                    font-size: 40px;
-                }
-            }
-
-            .port-b {
-                max-width: 70%;
+        .container {
+            .port {
                 width: 100%;
 
-                p {
-                    font-size: 15px;
-                }
-            }
+                .port-a {
+                    width: 100%;
 
-            .port-c {
-                max-width: 1400px;
-                width: 100%;
-                @include flex;
-
-                .port6 {
-                    width: 35%;
+                    h2 {
+                        font-size: 40px;
+                    }
                 }
 
-                .port7 {
-                    width: 35%;
+                .port-b {
+                    width: 73%;
+                    justify-content: space-around;
+
+                    p {
+                        font-size: 14px;
+                    }
+
+                }
+
+                .port-c {
+                    width: 80%;
+                    grid-template-columns: 1fr 1fr;
+
+                    .port9 {
+                        grid-column: 2/3;
+                    }
                 }
             }
         }
@@ -1588,16 +1826,14 @@ footer {
         width: 100%;
 
         .container {
-            padding: 0 10px;
+            padding: 0 20px;
 
             .brain {
-                max-width: 1400px;
                 width: 100%;
                 padding: 50px 0;
 
                 .brain-a {
-                    max-width: 70%;
-                    width: 100%;
+                    width: 70%;
 
                     h2 {
                         font-size: 40px;
@@ -1605,16 +1841,17 @@ footer {
                 }
 
                 .brain-b {
-                    max-width: 1400px;
-                    width: 100%;
+                    width: 80%;
                     display: flex;
-                    padding: 0 150px;
+
 
                     .brain6 {
-                        width: 30%;
-
+                        width: 32%;
+                        
                         img {
                             width: 50%;
+                            object-fit: cover;
+                    
                         }
 
                     }
@@ -1631,126 +1868,312 @@ footer {
         }
     }
 
-.blog{
-    width: 100%;
-    .container{
-        padding: 0 10px;
-        .latest{
-            max-width: 1400px;
-            width: 100%;
-            .blog-a{
-                max-width: 70%;
+    .blog {
+        width: 100%;
+
+        .container {
+            padding: 0 20px;
+
+            .latest {
+                max-width: 1400px;
                 width: 100%;
-                h2{
-                    font-size: 40px;
+
+                .blog-a {
+                    width: 100%;
+
+                    h2 {
+                        font-size: 40px;
+                    }
+
                 }
 
-            }
-            .blog-b{
-                max-width: 100%;
-                 padding: 0 150px;
-                .cereal3{
-                   width: 33%;
-                   .cereal1{
-                    object-fit: cover;
-                   }
-                 .cereal2{
-                   padding: 0;
-                    width: 100%;
-                 }
+                .blog-b {
+                    width: 80%;
+
+                    .cereal3 {
+                        width: 32%;
+
+                        .cereal1 {
+                            height: 150px;
+                        }
+
+                        .cereal2 {
+                            padding: 30px 20px;
+                            width: 100%;
+
+                            h4 {
+                                font-size: 27px;
+                            }
+                        }
+                    }
                 }
             }
         }
     }
-}
 
-
-}
-
-
-@media screen and (max-width:576px) {
-    nav {
+    .contact {
         width: 100%;
-        background-color: beige;
 
         .container {
-            max-width: 1400px;
-            width: 100%;
             padding: 0 10px;
 
-            .cont {
+            .from {
                 max-width: 1400px;
                 width: 100%;
-                padding: 0;
 
-                .nav-img {
-                    max-width: 150px;
+                .from-a {
                     width: 100%;
 
-                    .logo {
-                        max-width: 40px;
-                        height: 40px;
-                        width: 100%;
+                    h2 {
+                        font-size: 40px;
                     }
-
-                    .logo1 {
-                        font-size: 23px;
-
-                    }
-                }
-
-                .nav-ul {
-                    display: none;
 
                 }
 
-                .us {
-                    display: none;
+                .from-b {
+                    width: 80%;
+                    gap: 30px;
 
+                    .your {
+                        width: 59%;
+
+                        input {
+                            width: 48%;
+                        }
+                    }
+
+                    .address {
+                        width: 40%;
+
+                        .add3 {
+                            width: 100%;
+
+                            .add1 {
+                                width: 70px;
+                            }
+
+                            .add2 {
+                                h5 {
+                                    font-size: 18px;
+                                }
+
+                                p {
+                                    font-size: 15px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+    .footer-1 {
+        width: 100%;
+
+        .container {
+            .footer-a {
+                width: 100%;
+                @include flex;
+
+                .foo1 {
+                    @include flex;
+                    flex-wrap: wrap;
+                    width: 80%;
+                    gap: 40px;
+
+                    .ftr1 {
+                        width: 45%;
+                    }
+
+                    .ftr2 {
+                        width: 45%;
+                    }
+
+                    .ftr3 {
+                        width: 45%;
+                    }
+                }
+            }
+        }
+    }
+
+    .footer-2 {
+        width: 100%;
+
+        .container {
+            .footer-b {
+                width: 100%;
+
+                .footerend {
+                    width: 80%;
+
+                    .end2 {
+                        width: 50%;
+
+                        .end3 {
+                            width: 100%;
+
+                            ul {
+                                gap: 60px;
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+}
+
+
+@media screen and (max-width:800px) {
+    nav {
+        width: 100%;
+
+        .container {
+            padding: 0 20px;
+            @include flex;
+
+            .navbar {
+                width: 80%;
+                padding: 25px 0;
+
+                .img-1 {
+                    img {
+                        width: 70%;
+                    }
+                }
+
+                .ul-1 {
+                    width: 57%;
+
+                    ul {
+
+                        gap: 30px;
+                    }
+                }
+
+                .nav-btn {
+                    font-size: 17px;
+                    color: $c-b;
+                }
+            }
+        }
+    }
+    .footer-2 {
+        width: 100%;
+
+        .container {
+            .footer-b {
+                width: 100%;
+
+                .footerend {
+                    width: 100%;
+                    //padding: 0 0 0 20px;
+
+                    .end2 {
+                        width: 50%;
+
+                        .end3 {
+                            width: 100%;
+
+                            ul {
+                                gap: 60px;
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+
+}
+
+
+@media screen and (max-width:750px) {
+    nav {
+        width: 100%;
+
+        .container {
+            padding: 0 20px;
+            @include flex;
+
+            .navbar {
+                width: 100%;
+                padding: 25px 0;
+
+                .img-1 {
+                    img {
+                        width: 80%;
+                    }
+                }
+
+                .ul-1 {
+                    display: none;
+                }
+
+                .nav-btn {
+                    display: none;
                 }
 
                 i {
                     display: flex;
-                    color: $c-b;
                     font-size: 40px;
+
                 }
             }
         }
     }
+    
+}
+
+@media screen and (max-width:576px) {
+
 
 
     .creative {
         width: 100%;
 
         .container {
-            max-width: 1400px;
-            width: 100%;
-            padding: 10px 0;
+            padding: 0 10px;
+
+            .sun {
+                width: 100%;
+                left: 90px;
+                top: -65px;
+            }
 
             .design {
-                max-width: 1400px;
                 width: 100%;
                 flex-direction: column-reverse;
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 gap: 30px;
-                padding: 0;
 
-                .web-1 {
-                    // max-width: 45%;
+
+                .photo {
                     width: 100%;
-
                 }
 
-                .web2 {
-                    //   max-width: 50%;
+                .web-1 {
                     width: 100%;
-                    // .web-3{
-                    //     width: 100%;
 
-                    // }
-                    // .web-4{
-                    //     width: 100%;
+                    h1 {
+                        font-size: 50px;
 
-                    // }
+                    }
+
+                    p {
+                        font-size: 17px;
+                    }
+
+
                 }
             }
         }
@@ -1761,25 +2184,20 @@ footer {
         width: 100%;
 
         .container {
-            max-width: 1400px;
-            width: 100%;
-            padding: 0 10px;
+            padding: 0 20px;
 
             .year {
-                max-width: 1400px;
                 width: 100%;
                 padding: 50px 0;
                 flex-direction: column;
                 gap: 50px;
 
                 .year-a {
-                    max-width: 100%;
-                    // width: 100%;
+                    width: 100%;
                 }
 
                 .year-b {
-                    max-width: 100%;
-                    //  width: 100%;
+                      width: 100%;
 
                     .nam2 {
                         h2 {
@@ -1821,29 +2239,31 @@ footer {
         width: 100%;
 
         .container {
-            padding: 0 10px;
+            padding: 0 20px;
 
             .offer {
-                max-width: 1400px;
                 width: 100%;
-                padding: 100px 0;
 
                 .up {
-                    max-width: 70%;
                     width: 100%;
+                    gap: 20px;
+                    text-align: center;
+                    @include flex;
+
+                    h2 {
+                        font-size: 40px;
+                    }
                 }
 
-                .wrapp {
-                    max-width: 1400px;
+                .offer-1 {
                     width: 100%;
-                    align-items: center;
-                    justify-content: center;
+                    grid-gap: 24px;
+                    grid-template-columns: repeat(1, 1fr);
 
-
-                    .mobile {
-                        max-width: 100%;
+                    .div8 {
                         width: 100%;
                     }
+
                 }
             }
         }
@@ -1853,7 +2273,7 @@ footer {
         width: 100%;
 
         .container {
-            padding: 0 10px;
+            padding: 0 20px;
 
             .computer {
                 max-width: 1400px;
@@ -1899,6 +2319,13 @@ footer {
                                 font-size: 22px;
                             }
 
+                            .b4 {
+                                width: 100%;
+
+                                .b7 {
+                                    width: 100%;
+                                }
+                            }
                         }
                     }
                 }
@@ -1910,7 +2337,7 @@ footer {
         width: 100%;
 
         .container {
-            padding: 0 10px;
+            padding: 0 20px;
 
             .back {
                 max-width: 1400px;
@@ -1930,7 +2357,7 @@ footer {
 
                 .back-c {
                     width: 100%;
-                    padding: 0 15px;
+                    // padding: 0 15px;
 
                     .back3 {
                         width: 100%;
@@ -1955,16 +2382,13 @@ footer {
         width: 100%;
 
         .container {
-            padding: 0 10px;
+            padding: 0 20px;
 
             .port {
-                max-width: 1400px;
                 width: 100%;
-                padding: 50px 0;
 
                 .port-a {
-                    max-width: 100%;
-                    text-align: center;
+                    width: 100%;
 
                     h2 {
                         font-size: 40px;
@@ -1972,30 +2396,22 @@ footer {
                 }
 
                 .port-b {
-                    max-width: 100%;
-                    //width: 100%;
-                    gap: 10px;
+                    width: 70%;
                     flex-wrap: wrap;
-                    align-items: center;
-                    justify-content: center;
+                    gap: 10px;
 
                     p {
-                        font-size: 15px;
+                        font-size: 14px;
                     }
                 }
 
+
                 .port-c {
-                    max-width: 1400px;
                     width: 100%;
-                    @include flex;
+                    // grid-template-columns: 1fr;
+                    display: flex;
+                    flex-direction: column;
 
-                    .port6 {
-                        width: 100%;
-                    }
-
-                    .port7 {
-                        width: 100%;
-                    }
                 }
             }
         }
@@ -2005,15 +2421,14 @@ footer {
         width: 100%;
 
         .container {
-            padding: 0 10px;
+            padding: 0 20px;
 
             .brain {
-                max-width: 1400px;
                 width: 100%;
                 padding: 50px 0;
 
                 .brain-a {
-                    max-width: 90%;
+
                     width: 100%;
 
                     h2 {
@@ -2022,7 +2437,7 @@ footer {
                 }
 
                 .brain-b {
-                    max-width: 1400px;
+
                     width: 100%;
                     display: flex;
                     padding: 0 1px;
@@ -2039,9 +2454,10 @@ footer {
                     .brain8 {
                         display: flex;
                         width: 100%;
+                        height: 200px;
 
                         img {
-                            width: 20%;
+                            width: 30%;
                         }
                     }
                 }
@@ -2049,4 +2465,183 @@ footer {
         }
     }
 
+    .blog {
+        width: 100%;
+
+        .container {
+            padding: 0 20px;
+
+            .latest {
+                width: 100%;
+                // width: 100%;
+
+                .blog-a {
+                    width: 100%;
+
+
+                    h2 {
+                        font-size: 40px;
+                    }
+
+                }
+
+                .blog-b {
+                    width: 100%;
+                    flex-direction: column;
+                    gap: 30px;
+
+                    .cereal3 {
+                        width: 100%;
+
+                        .cereal1 {
+                            height: 300px;
+
+                            img {
+                                width: 80%;
+                            }
+                        }
+
+                        .cereal2 {
+                            padding: 30px 20px;
+                            width: 100%;
+
+                            h4 {
+                                font-size: 27px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .contact {
+        width: 100%;
+
+        .container {
+            padding: 0 20px;
+
+            .from {
+                width: 100%;
+
+                .from-a {
+                    width: 100%;
+                    text-align: center;
+
+                    h2 {
+                        font-size: 42px;
+                    }
+
+                }
+
+                .from-b {
+                    width: 100%;
+                    gap: 30px;
+
+                    flex-direction: column;
+
+                    .your {
+                        width: 100%;
+
+                        input {
+                            width: 100%;
+                        }
+                    }
+
+                    .address {
+                        width: 100%;
+
+                        .add3 {
+                            width: 100%;
+
+                            .add1 {
+                                width: 70px;
+                            }
+
+                            .add2 {
+                                h5 {
+                                    font-size: 18px;
+                                }
+
+                                p {
+                                    font-size: 15px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+    .footer-1 {
+        width: 100%;
+
+        .container {
+            padding: 0 20px;
+
+            .footer-a {
+                width: 100%;
+                @include flex;
+
+                .foo1 {
+                    @include flex;
+                    flex-wrap: wrap;
+                    width: 100%;
+                    gap: 40px;
+
+                    .ftr1 {
+                        width: 100%;
+                    }
+
+                    .ftr2 {
+                        width: 45%;
+                    }
+
+                    .ftr3 {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    .footer-2 {
+        width: 100%;
+
+        .container {
+            padding: 0 20px;
+
+            .footer-b {
+                width: 100%;
+
+                .footerend {
+                    width: 100%;
+                    flex-direction: column;
+                    gap: 20px;
+
+                    .end1 {
+                        width: 100%;
+                    }
+
+                    .end2 {
+                        width: 100%;
+
+                        .end3 {
+                            width: 100%;
+                            display: flex;
+                            justify-content: flex-start;
+                            align-items: flex-start;
+
+                            ul {
+                                gap: 60px;
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
 }
